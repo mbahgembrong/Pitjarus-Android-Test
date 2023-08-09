@@ -15,6 +15,7 @@ import com.pitjarus.pitjarusandroidtest.databinding.ActivityMainBinding
 import com.pitjarus.pitjarusandroidtest.databinding.CustomActionBarLayoutBinding
 import com.pitjarus.pitjarusandroidtest.ui.auth.LoginActivity
 import com.pitjarus.pitjarusandroidtest.ui.store.StoreActivity
+import com.pitjarus.pitjarusandroidtest.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.text.SimpleDateFormat
@@ -36,11 +37,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setupUi()
         setupObserver()
     }
-
-//    permission fun
-
-
-
     @SuppressLint("SetTextI18n")
     fun setupUi() {
 //        setup action bar
@@ -70,7 +66,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             btnDashboard.setOnClickListener(this@MainActivity)
             btnTarget.setOnClickListener(this@MainActivity)
             btnTransmision.setOnClickListener(this@MainActivity)
-            btnLogout.setOnClickListener(this@MainActivity)
+            btnLogout.setOnClickListener (this@MainActivity)
         }
     }
 
@@ -81,6 +77,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent).also {
                     finish()
+                }
+            }
+        }
+        _viewModel.logout.observe(this){
+            if(it.status == Status.SUCCESS){
+                if(it.data == true){
+
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent).also {
+                    finish()
+                }
                 }
             }
         }
@@ -106,8 +113,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Transmision", Toast.LENGTH_SHORT).show()
             }
             _binding.btnLogout.id -> {
-                _viewModel.logout()
-                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                _viewModel.logout
             }
         }
     }

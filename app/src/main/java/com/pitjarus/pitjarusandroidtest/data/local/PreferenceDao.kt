@@ -23,8 +23,10 @@ interface PreferenceDao {
     @Query("SELECT * FROM preference")
     fun getPreferences(): LiveData<List<Preference>>
 
-    @Query("DELETE FROM preference")
+    @Query("DELETE  FROM preference")
     fun deleteAll()
+
+
 
     @Query("DELETE FROM preference WHERE keyword = :keyword")
     fun delete(keyword: String)

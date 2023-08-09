@@ -1,6 +1,7 @@
 package com.pitjarus.pitjarusandroidtest.repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import com.pitjarus.pitjarusandroidtest.data.local.AppDatabase
@@ -18,7 +19,13 @@ class AuthRepository @Inject constructor(
     private val authRemoteDataSource: AuthRemoteDataSource,
     private val appDatabase: AppDatabase,
 ) {
-    val isLogin: LiveData<Boolean> = appDatabase.preferenceDao().getPreference("username").map { it?.value != null }
+    private val _isLogin = appDatabase.preferenceDao().getPreference("username").map {
+        it?.value != null
+    } as MutableLiveData<Boolean>
+    val isLogin: LiveData<Boolean>
+        get() = _isLogin
+
+
     fun login(username: String, password: String) = liveData(Dispatchers.IO) {
         emit(Resource.loading())
         val responseStatus = authRemoteDataSource.login(username, password)
@@ -36,10 +43,11 @@ class AuthRepository @Inject constructor(
         }
     }
 
-    fun logout() = liveData(Dispatchers.IO) {
+    val logout = liveData(Dispatchers.IO){
         emit(Resource.loading())
         appDatabase.preferenceDao().deleteAll()
-        emit(Resource.success(true))
+        _isLogin.postValue(false)
+        emitSource(liveData { emit(Resource.success(true)) })
     }
 
 }
