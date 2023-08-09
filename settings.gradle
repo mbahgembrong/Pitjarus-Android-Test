@@ -3,6 +3,11 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        jcenter()
+        maven {
+            allowInsecureProtocol = true
+            url "https://jitpack.io/"
+        }
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +15,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
+        maven {
+            allowInsecureProtocol = true
+            url "https://jitpack.io/"
+        }
     }
 }
 rootProject.name = "Pitjarus Android Test"

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.store.StoreDetailActivity" android:layout_weight="1" android:background="#F5F9FE">
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="300dp" android:id="@+id/imageStore"
+            android:src="@drawable/indomaret" android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/linearLayout3">
+        <Button
+                android:text="No Visit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/buttonNoVisit" android:layout_weight="1"
+                android:layout_margin="8dp" android:capitalize="none" android:textAllCaps="false"
+                android:backgroundTint="@android:color/holo_red_light"/>
+        <Button
+                android:text="Visit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/buttonVisit" android:layout_weight="1"
+                android:layout_margin="8dp" android:textAllCaps="false" android:backgroundTint="@color/blue"/>
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:id="@+id/cardView">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:layout_marginTop="48dp"
+                android:padding="8dp">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_weight="1">
+                <TextView
+                        android:text="Lokasi Belum Sesuai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_weight="0"
+                        android:id="@+id/textUserLocation" android:textStyle="bold" android:textColor="@color/orange"
+                        android:drawableLeft="@drawable/ic_location" android:drawableTint="@color/orange"
+                        android:layout_marginEnd="8dp"/>
+                <Button
+                        android:text="Reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/buttonReset" android:layout_weight="1"
+                        android:textAllCaps="false" android:backgroundTint="@color/blue"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="8dp">
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" app:srcCompat="@drawable/ic_store"
+                        android:layout_weight="0" android:tint="@color/orange"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp">
+                    <TextView
+                            android:text="Toko A"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textStoreName"
+                            style="@style/TextAppearance.AppCompat.Title"/>
+                    <TextView
+                            android:text="Jalan Pal Merah No 25 Jakarta Barat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textStoreAddress"
+                            android:layout_marginTop="8dp"/>
+                    <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="Tipe Outlet"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/textStoreTipeOutlet"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="Tipe Display"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/textStoreTipeDisplay"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="Sub Tipe Display"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/textStoreSubTipeDisplay"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="ERTM"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/textStoreERTM"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="Pareto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/textStorePareto"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:layout_marginTop="8dp">
+                            <TextView
+                                    android:text="E-merchandising"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold" android:layout_column="1"/>
+                            <TextView
+                                    android:text=" : "
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                            />
+                            <TextView
+                                    android:text="{data}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" android:id="@+id/textStoreEMerchandising"
+                                    android:layout_weight="1" android:layout_column="1"/>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="8dp">
+                <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" app:srcCompat="@drawable/ic_paper"
+                        android:tint="@color/orange"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp">
+                    <TextView
+                            android:text="Last Visit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:textStyle="bold"/>
+                    <TextView
+                            android:text="05-09-2018"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/textStoreDateLastVisit"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintBottom_toTopOf="@+id/cardView" android:layout_marginBottom="-30dp"
+            android:elevation="2dp" android:layout_marginEnd="16dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp" android:src="@drawable/ic_navigation" android:id="@+id/btnNavigation"
+                android:layout_margin="8dp" app:civ_circle_background_color="#0E90B1"
+                app:civ_border_color="@color/white" app:civ_border_width="2dp" app:civ_border_overlay="true"
+                android:adjustViewBounds="false"
+        />
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp" android:src="@drawable/ic_camera" android:id="@+id/btnCamera"
+                android:layout_margin="8dp" app:civ_circle_background_color="#0E90B1"
+                app:civ_border_color="@color/white" app:civ_border_width="2dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp" android:src="@drawable/ic_my_location" android:id="@+id/btnMyLocation"
+                android:layout_margin="8dp" app:civ_circle_background_color="#0E90B1" app:civ_border_overlay="true"
+                app:civ_border_width="2dp" app:civ_border_color="@color/white"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

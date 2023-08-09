@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                   android:layout_height="wrap_content" android:layout_margin="8dp"
+                                   app:cardCornerRadius="10dp"
+                                   android:innerRadius="0dp"
+                                   android:shape="ring"
+                                   android:thicknessRatio="1.9">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content" android:padding="8dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="Toko A"
+                  android:id="@+id/textTokoName" android:layout_margin="8dp" android:textSize="18sp"
+                  style="@style/TextAppearance.AppCompat.Title"
+                  app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toStartOf="@+id/textPerfectStore"/>
+        <TextView
+                android:text="Perfect Store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textPerfectStore"
+                app:layout_constraintTop_toTopOf="@+id/textTokoName"
+                android:textStyle="bold" android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/textTokoName"
+                android:drawableLeft="@drawable/ic_checkmark_circle"
+                android:textColor="@android:color/holo_green_light"
+                android:drawableTint="@android:color/holo_green_light" android:visibility="gone"
+                tools:visibility="visible" app:layout_constraintEnd_toStartOf="@+id/imageLocation"
+                app:layout_constraintStart_toEndOf="@+id/textTokoName" app:layout_constraintHorizontal_bias="0.5"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/textTokoName"
+                app:layout_constraintTop_toBottomOf="@+id/textTokoName" android:layout_marginTop="8dp"
+                android:id="@+id/linearLayout2" app:layout_constraintEnd_toEndOf="@+id/textPerfectStore">
+            <TextView
+                    android:text="Cluster : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_weight="0"/>
+            <TextView
+                    android:text=" Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textCluster" android:layout_weight="1"/>
+        </LinearLayout>
+        <TextView
+                android:text="TT Regular - IRTM Big Store"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/textType"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" app:layout_constraintEnd_toEndOf="@+id/linearLayout2"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_location"
+                android:id="@+id/imageLocation"
+                android:tint="@android:color/holo_green_light" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/textJarak"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/textPerfectStore" app:layout_constraintHorizontal_bias="0.5"
+                android:paddingStart="8dp" android:paddingEnd="8dp"/>
+        <TextView
+                android:text="1m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textJarak"
+                app:layout_constraintTop_toBottomOf="@+id/imageLocation"
+                app:layout_constraintEnd_toEndOf="@+id/imageLocation"
+                app:layout_constraintStart_toStartOf="@+id/imageLocation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" android:layout_marginTop="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

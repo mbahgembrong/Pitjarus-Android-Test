@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678205137584",
+    "project_id": "pitjarus-android-test",
+    "storage_bucket": "pitjarus-android-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678205137584:android:2df56d2353877de046d175",
+        "android_client_info": {
+          "package_name": "com.pitjarus.pitjarusandroidtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678205137584-5ah991ssuse8sa0nitd0dq4uhqt855s4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATGjMYqetgulZwvDPiR4X8WjGU0S_sbvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678205137584-5ah991ssuse8sa0nitd0dq4uhqt855s4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="250dp"
+                                   android:layout_height="wrap_content"
+                                   app:cardCornerRadius="10dp"
+                                   android:innerRadius="0dp"
+                                   android:shape="ring"
+                                   android:thicknessRatio="1.9"
+                                   android:backgroundTint="#EFB400" android:layout_margin="8dp">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="match_parent" android:padding="8dp">
+        <TextView
+                android:text="OSA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textDashboardTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                style="@style/TextAppearance.AppCompat.Title" android:textColor="@color/white" android:textSize="24sp"
+                android:layout_marginTop="24dp"/>
+        <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp" app:srcCompat="@drawable/ic_food" android:id="@+id/imageView4"
+                android:tint="@color/white"
+                app:layout_constraintTop_toTopOf="@+id/textDashboardTitle" app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:text="September 2023"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/textDashboardMonth"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/textDashboardTitle" android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
+        <TextView
+                android:text="50%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textDashboardPercentase"
+                app:layout_constraintTop_toBottomOf="@+id/textDashboardMonth"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp" android:textColor="@color/white" android:textSize="34sp"/>
+        <TextView
+                android:text="Target"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" app:layout_constraintTop_toBottomOf="@+id/textDashboardPercentase"
+                android:id="@+id/textDashboardTarget2"
+                android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/textDashboardTarget"/>
+        <TextView
+                android:text="40"
+                android:layout_width="0dp"
+                android:layout_height="19dp" android:id="@+id/textDashboardTarget" android:layout_column="1"
+                app:layout_constraintStart_toEndOf="@+id/textDashboardTarget2"
+                app:layout_constraintTop_toTopOf="@+id/textDashboardTarget2"
+                app:layout_constraintBottom_toBottomOf="@+id/textDashboardTarget2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" android:gravity="end" android:textColor="@color/white"/>
+        <TextView
+                android:text="Pencapaian"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/textDashboardTarget2"
+                android:textColor="@color/white" android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/textDashboardPencapaian"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="24dp"/>
+        <TextView
+                android:text="20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/textDashboardPencapaian"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="@+id/textView14"
+                app:layout_constraintBottom_toBottomOf="@+id/textView14" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5" android:gravity="end" android:textColor="@color/white"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

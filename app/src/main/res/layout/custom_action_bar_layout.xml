@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@android:color/transparent">
+    <TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:text="Main Menu"
+              android:layout_weight="1" android:id="@+id/textTitleActionBar"
+              style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+              android:textColor="@color/white"></TextView>
+    <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/btnActionBar"
+
+            android:layout_weight="0" style="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"/>
+
+</LinearLayout>
